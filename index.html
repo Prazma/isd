@@ -1,0 +1,66 @@
+<!DOCTYPE html>
+<html>
+	<head>
+		<title>iSD</title>
+		<meta name="viewport" content="width=device-width, user-scalable=no">
+		<meta name="apple-mobile-web-app-title" content="iSD">
+		<meta name="apple-mobile-web-app-capable" content="yes">
+		<meta name="apple-mobile-web-app-status-bar-style" content="black">
+		<style>
+			body {
+				margin: 0;
+				font-family: sans-serif;
+				background: #f1f1f1;
+			}
+			.logo {
+				font-size: 50px;
+				font-weight: bold;
+				color: #a1a1a1;
+			}
+			#logPort {
+				text-align: center;
+				margin-top: 40px;
+			}
+			#navPort {
+				position: fixed;
+				top: 0;
+				width: 100%;
+				background: #bfbfbf;
+				box-shadow: 0px 2px 5px #252525;
+			}
+			hsub {
+				font-size: 30px;
+				font-weight: bold;
+				color: #f5f5f5;
+				display: block;
+				margin-left: 20px;
+			}
+		</style>
+	</head>
+	<body onload="logi()">
+		<div id="logPort">
+			<span class="logo">iSD</span>
+		</div>
+		<div id="usePort" style="display: none;">
+		</div>
+		<div id="disPort" style="display: none;">
+			<div id="navPort"><hsub>Files</hsub></div>
+		</div>
+		<div id="traPort" style="display: none;">
+		</div>
+		<script>
+			function logi() {
+				document.getElementById("logPort").style.display = "";
+				document.getElementById("usePort").style.display = "none";
+				document.getElementById("disPort").style.display = "none";
+				document.getElementById("traPort").style.display = "none";
+				setTimeout( function () {
+					document.getElementById("logPort").style.display = "none";
+					document.getElementById("usePort").style.display = "none";
+					document.getElementById("disPort").style.display = "";
+					document.getElementById("traPort").style.display = "none";
+				}, 1000)
+			}
+		</script>
+	</body>
+</html>
