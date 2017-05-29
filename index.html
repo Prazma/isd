@@ -120,6 +120,7 @@
 			#filist {
 				margin-top: 110px;
 				text-align: center;
+				padding: 0px 0px 70px 0px;
 			}
 			.filist {
 				background: #f1f1f1;
@@ -195,7 +196,7 @@
 				}, 1000)
 			}
 			function lidd() {
-				var filime = document.getElementById("qwerty").innerHTML;
+				var filime = document.getElementById("qwerty").value;
 				document.getElementById("statil").style.display = "none";
 				document.getElementById("filist").style.marginTop = "100px";
 				document.getElementById("filist").innerHTML += '<div class="filist"><button class="star">★</button><span class="title">'+ filime +'</span></div>'
