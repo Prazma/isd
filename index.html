@@ -49,9 +49,9 @@
 			.btn {
 				margin-right: 0;
 				margin-top: 60px;
-				background-color: #d14836;
-				background-image: -webkit-linear-gradient(top,#dd4b39,#d14836);
-				background-image: linear-gradient(top,#dd4b39,#d14836);
+				background-color: rgb(232, 181, 8);
+				background-image: -webkit-linear-gradient(top,rgb(232, 181, 8),#e8b808);
+				background-image: linear-gradient(top,rgb(232, 181, 8),#e8b808);
 				color: #fff;
 				border: 1px solid transparent;
 				border: 1px solid transparent;
@@ -61,6 +61,7 @@
 				padding: 5px;
 				margin-left: 10px;
 			    cursor: pointer;
+				margin-right: 5px;
 			}
 			hr {
 				border-style: solid;
@@ -107,12 +108,43 @@
 				padding: 10px;
 				width: 30%;
 				min-height: 50px;
-				background: #d14836;
+				background: rgb(232, 181, 8);
 				color: #ffffff;
 				font-weight: bold;
 				border: none;
 				border-radius: 6px;
 				margin-left: 2px;
+			}
+			#filist {
+				margin-top: 110px;
+				text-align: center;
+			}
+			.filist {
+				background: #f1f1f1;
+				padding: 8px 0px 8px 0px;
+				border-bottom: solid;
+				border-bottom-width: 1px;
+				border-bottom-color: #a1a1a1;
+				text-align: left;
+			}
+			.title {
+				font-weight: 300pt;
+				font-size: 20px;
+				margin-left: 5px;
+			}
+			.star {
+				margin-right: 0;
+				background-color: #a1a1a1;
+				color: #fff;
+				border: 1px solid transparent;
+				border: 1px solid transparent;
+				-webkit-border-radius: 2px;
+				border-radius: 5px;
+				font-size: 17px;
+				padding: 5px;
+				margin-left: 10px;
+			    cursor: pointer;
+				margin-right: 5px;
 			}
 		</style>
 	</head>
@@ -129,10 +161,14 @@
 			<div id="filPort">
 				<btn class="fileUpload btn btn-primary">
 					<span>New Files</span>
-					<input type="file" class="upload" multiple/>
+					<input id="qwerty" type="file" class="upload" onchange="lidd()" multiple/>
 				</btn>
+				<button class="btn">Browse</button>
 				<button class="btn">Send Files</button>
 				<hr>
+			</div>
+			<div id="filist">
+				<div id="statil"><span id="statFil">No Files</span><br></div>
 			</div>
 		</div>
 		<div id="traPort" style="display: none;">
@@ -155,6 +191,12 @@
 					document.getElementById("traPort").style.display = "none";
 					document.getElementById("liPort").style.display = "";
 				}, 1000)
+			}
+			function lidd() {
+				var filime = document.getElementById("qwerty").innerHTML;
+				document.getElementById("statil").style.display = "none";
+				document.getElementById("filist").style.marginTop = "100px";
+				document.getElementById("filist").innerHTML += '<div class="filist"><button class="star">★</button><span class="title">'+ filime +'</span></div>'
 			}
 		</script>
 	</body>
